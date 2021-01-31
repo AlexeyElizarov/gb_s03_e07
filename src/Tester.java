@@ -34,7 +34,7 @@ public class Tester {
 
         for (Method o : methods) {
 
-            if(o.getAnnotation(BeforeSuite.class) != null) {
+            if (o.getAnnotation(BeforeSuite.class) != null) {
                 before.add(o);
             }
 
@@ -59,15 +59,18 @@ public class Tester {
             throw new RuntimeException("Check BeforeSuite or AfterSuite annotated methods. They must be in a single implementation.");
         }
 
+        System.out.printf("Running %s\n", test_case_class);
+
         try {
             before.get(0).invoke(test_case_class.newInstance());
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
+
         for (Method test : tests) {
             try {
-                System.out.printf("Running %s, %s, priority = %s\n", test_case_class, test.getName(), test.getAnnotation(Test.class).priority());
+                System.out.printf("%s, priority = %s\n", test.getName(), test.getAnnotation(Test.class).priority());
                 test.invoke(test_case_class.newInstance());
             } catch (IllegalAccessException | InvocationTargetException | InstantiationException e) {
                 e.printStackTrace();

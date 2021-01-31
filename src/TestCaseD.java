@@ -18,12 +18,12 @@ public class TestCaseD {
 
     @BeforeSuite
     public void preprocess() {
-        System.out.println("Preprocessing test D");
+        System.out.println("Preprocessing");
     }
 
     @AfterSuite
     public void postprocess() {
-        System.out.println("Postprocessing test D");
+        System.out.println("Postprocessing");
     }
 
 }
