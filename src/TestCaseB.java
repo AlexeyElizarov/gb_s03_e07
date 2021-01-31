@@ -28,17 +28,17 @@ public class TestCaseB {
 
     @BeforeSuite
     public void preprocess2() {
-        System.out.println("Preprocessing test B");
+        System.out.println("Preprocessing");
     }
 
     @BeforeSuite
     public void preprocess() {
-        System.out.println("Preprocessing test B");
+        System.out.println("Preprocessing");
     }
 
     @AfterSuite
     public void postprocess() {
-        System.out.println("Postprocessing test B");
+        System.out.println("Postprocessing");
     }
 
 }
